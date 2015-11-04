@@ -106,7 +106,7 @@ namespace CustDisApp.Controllers
             //    new LoginDisApp { custid = cid, pswd = pwd, response= res}
             //};
 
-            LoginDisApp lda = new LoginDisApp();
+            //LoginDisApp lda = new LoginDisApp();
 
             //lda.
 
