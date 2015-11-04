@@ -38,7 +38,7 @@ namespace CustDisApp.Controllers
                 pwd = "";
 
             string res = string.Empty;
-            string qry = "Select Custid, Password from hackathon.login_det where Custid='" + cid + "';";
+            string qry = "Select Custid, Password from login_auth where Custid='" + cid + "' and status='Y';";
             string cs = ConfigurationManager.ConnectionStrings["Mysql_cs"].ToString();
             string ms_custid = string.Empty;
             string ms_passwd = string.Empty;
