@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="websvctest" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\App\\A\\CustDisApp\\CustDisApp\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\App\\A\\CustDisApp\\CustDisApp\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Mysql_cs-Web.config Connection String" description="" value="host= 	us-cdbr-iron-east-03.cleardb.net;user=b3af02e5b7c04f;password=5528496d;database=ad_7719802baf437c0" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\App\\A\\CustDisApp\\CustDisApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Mysql_cs']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-CustDisApp-20151103012311.mdf;Initial Catalog=aspnet-CustDisApp-20151103012311;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\App\\A\\CustDisApp\\CustDisApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
