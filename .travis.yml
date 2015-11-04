@@ -9,3 +9,4 @@ solution: CustDisApp.sln
 script:
   - xbuild /p:Configuration=Release CustDisApp.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./CustDisApp.Tests/bin/Release/CustDisApp.Tests.dll
+sudo: required
