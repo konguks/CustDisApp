@@ -48,7 +48,7 @@
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-	<Reference Include="mscorlib"/>
+	<Reference Include="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
     <Reference Include="dotless.Core, Version=1.4.0.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
       <HintPath>..\packages\dotless.1.4.0.0\lib\dotless.Core.dll</HintPath>
       <Private>True</Private>
