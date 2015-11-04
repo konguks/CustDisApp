@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 using CustDisApp.Models;
 
 namespace CustDisApp.Controllers
@@ -39,24 +40,28 @@ namespace CustDisApp.Controllers
 
             string res = string.Empty;
             string qry = "Select Custid, Password from login_auth where Custid='" + cid + "' and status='Y';";
-            string cs = ConfigurationManager.ConnectionStrings["Mysql_cs"].ToString();
+            string cs = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString();
             string ms_custid = string.Empty;
             string ms_passwd = string.Empty;
 
 
-            MySqlConnection con = new MySqlConnection(cs);
-            MySqlCommand cmd = new MySqlCommand(qry, con);
+            SqlConnection con = new SqlConnection(cs);
+            SqlCommand cmd = new SqlCommand(qry, con);
             try
             {
                 con.Open();
 
-                MySqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    ms_custid = dr.GetString("Custid");
-                    ms_passwd = dr.GetString("Password");
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows) {
+                    while (dr.Read())
+                    {
+                        ms_custid = dr.GetString(0);
+                        ms_passwd = dr.GetString(1);
+                    }
                 }
+                else
+                    res = "Please enter valid Customer Id";
+
 
             }
             catch (Exception ex)
@@ -78,6 +83,8 @@ namespace CustDisApp.Controllers
                 res = "Success";
                 //return JsonConvert.SerializeObject(lda);
             }
+            else
+                res = "Please Check your Password..";
 
 
             //string cid = "123";
