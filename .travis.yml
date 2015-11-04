@@ -7,6 +7,6 @@ deploy:
 language: csharp
 solution: CustDisApp.sln
 script:
-  - xbuild /p:TargetFrameworkVersion="v4.0" CustDisApp.sln
+  - xbuild /p:Configuration=Release;TargetFrameworkVersion="v4.0" CustDisApp.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./CustDisApp.Tests/bin/Release/CustDisApp.Tests.dll
 sudo: required
